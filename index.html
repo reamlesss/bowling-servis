@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="cs" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowling Servis</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Bowling Servis</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Přepnout navigaci">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Domů</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Služby</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ceník</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 p-5 text-center">
+                <h1 class="display-4 fw-bold mb-3 hero-title">Bowling Servis</h1>
+                <p class="lead mb-4">Servis elektroniky bowlingových drah Brunswick®
+                </p>
+                <div class="d-grid gap-2 d-md-flex justify-content-center">
+                    <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 rounded-pill shadow-sm">Naše
+                        služby</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4 rounded-pill">Kontakt</button>
+                </div>
+            </div>
+            <div class="col-md-6 p-5">
+                <div class="ratio ratio-16x9 rounded-4 shadow-lg overflow-hidden mb-3 parallax" data-speed="0.3">
+                    <iframe src="https://www.youtube.com/embed/Iod6uwUGM2E" title="YouTube video" autoplay=1
+                        frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p class="text-center text-muted small mb-0">
+                    <i class="bi bi-play-circle me-2"></i>Jak funguje bowlingový stroj - technický pohled na mechanismus
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- What We Repair Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-3">Co opravujeme</h2>
+                <p class="lead text-muted">Specializujeme se na servis elektroniky bowlingových drah Brunswick®</p>
+            </div>
+            <div class="row g-4">
+                <!-- Service Card 1 - Blur Animation -->
+                <div class="col-md-4">
+                    <div class="service-card position-relative overflow-hidden rounded-4 shadow-sm animate-scale stagger-1"
+                        onclick="openLightbox('CPU deska.jpeg', 'Tel-e-foul')">
+                        <img src="CPU deska.jpeg" class="service-card-img" alt="CPU deska">
+                        <div class="service-card-hint">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                        <div class="service-card-overlay">
+                            <h5 class="fw-bold text-white mb-2">Tel-e-foul</h5>
+                            <p class="text-white-50 small mb-0">Detekce přešlapu - profesionální oprava a kalibrace
+                                systému pro detekci faulů na bowlingových drahách.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Card 2 - Scale Animation -->
+                <div class="col-md-4">
+                    <div class="service-card position-relative overflow-hidden rounded-4 shadow-sm animate-scale stagger-2"
+                        onclick="openLightbox('HV board.jpeg', 'I/O Board & High Voltage Board')">
+                        <img src="HV board.jpeg" class="service-card-img" alt="HV board">
+                        <div class="service-card-hint">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                        <div class="service-card-overlay">
+                            <h5 class="fw-bold text-white mb-2">I/O Board & High Voltage Board</h5>
+                            <p class="text-white-50 small mb-0">Oprava a výměna elektronických desek - I/O board a high
+                                voltage board pro spolehlivý chod vašich drah.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service Card 3 - Flip Animation -->
+                <div class="col-md-4">
+                    <div class="service-card position-relative overflow-hidden rounded-4 shadow-sm animate-flip stagger-3"
+                        onclick="openLightbox('Fotobunka.JPG', 'Ball Detector')">
+                        <img src="Fotobunka.JPG" class="service-card-img" alt="Fotobunka">
+                        <div class="service-card-hint">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                        <div class="service-card-overlay">
+                            <h5 class="fw-bold text-white mb-2">Ball Detector</h5>
+                            <p class="text-white-50 small mb-0">Fotobunka - optická závora pro detekci míčů. Servis a
+                                výměna optických senzorů pro přesnou detekci.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <footer class="footer mt-auto py-4 bg-white border-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h5>Kontaktujte nás</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-envelope me-2"></i>Email: info@bowlingservis.cz</li>
+                        <li><i class="bi bi-telephone me-2"></i>Telefon: +420 123 456 789</li>
+                        <li><i class="bi bi-geo-alt me-2"></i>Adresa: Bowlingová 1, Praha</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Kde nás najdete</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.0!2d14.42076!3d50.08804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDA1JzE2LjkiTiAxNMKwMjUnMTQuNyJF!5e0!3m2!1sen!2scz!4v1600000000000!5m2!1sen!2scz"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <span class="text-muted">© 2023 Bowling Servis. Všechna práva vyhrazena.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js?v=3"></script>
+</body>
+
+</html>
