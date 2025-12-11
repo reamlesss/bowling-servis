@@ -179,11 +179,10 @@ if (heroTitle) {
 window.addEventListener('load', () => {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
-        if (img.complete) {
-            img.classList.add('loaded');
-        } else {
+        if (!img.complete) {
+            img.classList.add('loading');
             img.addEventListener('load', () => {
-                img.classList.add('loaded');
+                img.classList.remove('loading');
             });
         }
     });
