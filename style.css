@@ -677,7 +677,7 @@ section .lead {
 
     .lead {
         font-size: 1.4rem; /* Bigger text under title */
-        margin-bottom: 1.5rem !important; /* Reduce space below text */
+        margin-bottom: 0.5rem !important; /* Drastically reduce space below text */
     }
 
     /* Reduce vertical spacing in hero section */
@@ -686,7 +686,7 @@ section .lead {
     }
     
     .col-md-6.p-5 {
-        padding: 1.5rem !important; /* Reduce padding from p-5 (3rem) to 1.5rem */
+        padding: 0.5rem 1rem !important; /* Minimal vertical padding, keep some horizontal */
     }
 
     .service-card:hover {
