@@ -182,9 +182,12 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 .footer {
+    /* background-color: rgba(255, 255, 255, 0.95) !important; */
+    /* backdrop-filter: blur(10px); */
+    margin-top: auto;
+    /* border-top: 1px solid var(--border-color); */
     background-color: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(10px);
-    margin-top: auto;
     border-top: 1px solid var(--border-color);
 }
 
@@ -216,7 +219,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradientShift 4s ease infinite, fadeInUp .8s ease-out .2s both;
+   animation: gradientShift 4s ease infinite;  /* fadeInUp .8s ease-out .2s both; */
+    cursor: default !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.hero-title:hover{
+    cursor: default !important; 
 }
 
 @keyframes gradientShift {
@@ -239,7 +250,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 
 .lead {
     color: var(--text-muted);
-    animation: fadeInUp 0.8s ease-out 0.2s both;
+    cursor: default !important;
+    /* animation: fadeInUp 0.8s ease-out 0.2s both; */
 }
 
 /* Fade in animations */
@@ -310,8 +322,10 @@ section .lead {
     background: linear-gradient(white, white) padding-box,
                 linear-gradient(135deg, var(--primary-color), var(--accent-color)) border-box;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: fadeInUp 0.8s ease-out 0.3s both;
+    /* animation: fadeInUp 0.8s ease-out 0.3s both; */
     text-align: center;
+    isolation: isolate;
+    will-change: transform;
 }
 
 .about-card::before {
@@ -334,7 +348,7 @@ section .lead {
 }
 
 .about-card:hover::before {
-    opacity: 0.1;
+    /* opacity: 0.1; */
 }
 
 .about-card p {
@@ -357,6 +371,8 @@ section .lead {
     perspective: 1000px;
     border: 2px solid rgba(255, 255, 255, 0.5);
     background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    isolation: isolate;
+    position: relative;
 }
 
 .service-card-img {
@@ -396,7 +412,8 @@ section .lead {
 .service-card:hover {
     transform: translateY(-20px) rotateX(3deg) scale(1.02);
     box-shadow: 0 30px 80px rgba(37, 99, 235, 0.4), 0 0 40px rgba(245, 158, 11, 0.2) !important;
-    border-color: rgba(245, 158, 11, 0.6);
+    border: none;
+    
 }
 
 .service-card:hover .service-card-img {
@@ -716,3 +733,83 @@ img {
 img.loading {
     opacity: 0.3;
 }
+
+/* =========================================
+   Animation Classes for Demo 
+   ========================================= */
+
+/* Base transition for all animations */
+[class*="animate-"] {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                filter 0.8s ease;
+    will-change: opacity, transform;
+}
+
+/* 1. Slide Up */
+.animate-slide-up {
+    transform: translateY(50px);
+}
+
+/* 2. Fade */
+.animate-fade {
+    /* distinct from base opacity: 0 */
+}
+
+/* 3. Scale */
+.animate-scale {
+    transform: scale(0.8);
+}
+
+/* 4. Slide Left */
+.animate-slide-left {
+    transform: translateX(-50px);
+}
+
+/* 5. Slide Right */
+.animate-slide-right {
+    transform: translateX(50px);
+}
+
+/* 6. Rotate */
+.animate-rotate {
+    transform: rotate(-10deg) scale(0.9);
+}
+
+/* 7. Blur */
+.animate-blur {
+    filter: blur(10px);
+    transform: scale(0.95);
+}
+
+/* 8. Bounce In */
+.animate-bounce-in {
+    transform: scale(0.5);
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* 9. Flip */
+.animate-flip {
+    transform: perspective(1000px) rotateY(90deg);
+    backface-visibility: hidden;
+}
+
+/* 10. Slide Rotate */
+.animate-slide-rotate {
+    transform: translateY(50px) rotate(-5deg);
+}
+
+/* Stagger delays */
+.stagger-0 { transition-delay: 0s; }
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+
+/* Visible State (Triggered by JS) */
+[class*="animate-"].visible {
+    opacity: 1;
+    transform: translate(0) scale(1) rotate(0);
+    filter: none;
+}
+
