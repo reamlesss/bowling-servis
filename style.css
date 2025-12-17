@@ -649,26 +649,45 @@ section .lead {
 }
 
 /* Responsive adjustments */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-
-
-    /* PC HERO */
-
-
-    /* .hero-title {
-    font-style: italic;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--accent-color) 100%);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientShift 4s ease infinite, fadeInUp .8s ease-out .2s both;
-} */
-
-    .hero-title{
-        
-        
+    /* Navbar adjustments */
+    .navbar-toggler {
+        display: none !important;
     }
+
+    .navbar-brand {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar-logo {
+        height: 40px; /* Smaller, appropriate size for mobile center */
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    /* Hero adjustments */
+    .hero-title {
+        font-size: 3.5rem; /* Bigger title on mobile */
+    }
+
+    .lead {
+        font-size: 1.4rem; /* Bigger text under title */
+        margin-bottom: 1.5rem !important; /* Reduce space below text */
+    }
+
+    /* Reduce vertical spacing in hero section */
+    .container.mt-5 {
+        margin-top: 2rem !important;
+    }
+    
+    .col-md-6.p-5 {
+        padding: 1.5rem !important; /* Reduce padding from p-5 (3rem) to 1.5rem */
+    }
+
     .service-card:hover {
         transform: translateY(-10px);
     }
