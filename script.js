@@ -76,28 +76,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Parallax effect on scroll
-let ticking = false;
+// Parallax effect on scroll - DISABLED
+// let ticking = false;
 
-function updateParallax() {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.parallax');
+// function updateParallax() {
+//     const scrolled = window.pageYOffset;
+//     const parallaxElements = document.querySelectorAll('.parallax');
     
-    parallaxElements.forEach(element => {
-        const speed = element.dataset.speed || 0.5;
-        const yPos = -(scrolled * speed);
-        element.style.transform = `translateY(${yPos}px)`;
-    });
+//     parallaxElements.forEach(element => {
+//         const speed = element.dataset.speed || 0.5;
+//         const yPos = -(scrolled * speed);
+//         element.style.transform = `translateY(${yPos}px)`;
+//     });
     
-    ticking = false;
-}
+//     ticking = false;
+// }
 
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(updateParallax);
-        ticking = true;
-    }
-});
+// window.addEventListener('scroll', () => {
+//     if (!ticking) {
+//         window.requestAnimationFrame(updateParallax);
+//         ticking = true;
+//     }
+// });
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
