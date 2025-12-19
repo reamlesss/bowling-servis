@@ -194,3 +194,30 @@ function changeClassesToMobile() {
     // const 
 }
 
+
+// Cookie Consent Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+    const declineBtn = document.getElementById('cookie-decline');
+
+    // Check if user has already made a choice
+    if (!localStorage.getItem('cookieConsent')) {
+        // Show banner after a short delay
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1000);
+    }
+
+    // Handle Accept
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        cookieBanner.classList.remove('show');
+    });
+
+    // Handle Decline
+    declineBtn.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        cookieBanner.classList.remove('show');
+    });
+});
