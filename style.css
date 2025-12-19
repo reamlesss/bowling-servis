@@ -888,6 +888,23 @@ img.loading {
     flex-shrink: 0;
 }
 
+/* Disable animations for cookie buttons */
+.cookie-buttons .btn {
+    transition: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+    animation: none !important;
+}
+
+.cookie-buttons .btn::before {
+    display: none !important;
+}
+
+.cookie-buttons .btn:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
 @media (max-width: 768px) {
     .cookie-banner {
         padding: 1rem 0;
