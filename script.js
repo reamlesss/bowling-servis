@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(header);
     });
 
-    // Animate buttons
-    const buttons = document.querySelectorAll('.btn');
+    // Animate buttons (excluding cookie banner buttons)
+    const buttons = document.querySelectorAll('.btn:not(.cookie-buttons .btn)');
     buttons.forEach((button, index) => {
         button.classList.add('animate-slide-up');
         button.style.transitionDelay = `${0.4 + index * 0.1}s`;
@@ -201,12 +201,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const acceptBtn = document.getElementById('cookie-accept');
     const declineBtn = document.getElementById('cookie-decline');
 
+    
     // Check if user has already made a choice
     if (!localStorage.getItem('cookieConsent')) {
-        // Show banner after a short delay
+        // Show banner after a short delay for smooth effect
         setTimeout(() => {
             cookieBanner.classList.add('show');
-        }, 1000);
+        }, 500);
     }
 
     // Handle Accept
