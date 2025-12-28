@@ -212,7 +212,15 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
 }
 
 /* Hero section enhancements */
-/* Hero section enhancements */
+.hero-section {
+    min-height: calc(100vh - 80px); /* Account for navbar */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
 .hero-title {
     font-style: italic;
     color: var(--primary-color);
@@ -227,6 +235,11 @@ h1, h2, h3, h4, h5, h6, .navbar-brand {
     -moz-user-select: none;
     -ms-user-select: none;
 }
+
+.hero-section p.lead:last-child {
+    margin-bottom: 0;
+}
+
 .hero-title:hover{
     cursor: default !important; 
 }
@@ -313,7 +326,7 @@ section h2::after {
 }
 
 section .lead {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 /* About Card Styling */
@@ -672,21 +685,17 @@ section .lead {
 
     /* Hero adjustments */
     .hero-title {
-        font-size: 3.5rem; /* Bigger title on mobile */
+        font-size: 2.2rem; /* Adjusted for longer text on mobile */
+        line-height: 1.2;
     }
 
     .lead {
-        font-size: 1.4rem; /* Bigger text under title */
-        margin-bottom: 0.5rem !important; /* Drastically reduce space below text */
+        font-size: 1.8rem !important; /* Bigger text under title */
     }
 
-    /* Reduce vertical spacing in hero section */
-    .container.mt-5 {
-        margin-top: 2rem !important;
-    }
-    
-    .col-md-6.p-5 {
-        padding: 0.5rem 1rem !important; /* Minimal vertical padding, keep some horizontal */
+    .hero-section {
+        min-height: calc(100vh - 100px);
+        padding: 1rem 0;
     }
 
     .service-card:hover {
